@@ -18,7 +18,7 @@ option_br = st.selectbox(
 )
 
 st.write('You selected:', option_br)
-
+st.divider()
 option_model = st.selectbox(
    "Select AI/ML Model.",
    ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
@@ -27,6 +27,15 @@ option_model = st.selectbox(
 )
 
 st.write('You selected:', option_model)
+
+st.divider()
+
+branch_cluster_no = int(df[df[Name == option_br]]['cluster']) +1
+st.write("Branch Belongs to Cluster No:", branch_cluster_no)
+
+st.divider()
+
+
 
 
 
