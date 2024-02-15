@@ -44,7 +44,35 @@ df_perf = df[df['Dlv Branch Code_'] == option_br]
 st.dataframe(df_perf)
 st.divider()
 
+st.header("Performance Based Clusters:")
 
+option_model = st.selectbox(
+   "Select AI/ML Model.",
+   ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
+   index=None,
+   placeholder="Select ML Model...",
+)
+
+df_agglo_fin = df.copy()
+df_agglo_fin['cluster']  = df_agglo['cluster']
+df_gmm_fin = df.copy()
+df_gmm_fin['cluster']  = df_gmm['cluster']
+df_kmeans_fin = df.copy()
+df_kmeans_fin['cluster']  = df_kmeans['cluster']
+
+Cluster_no = st.slider('Choose Cluster Number', 1, 5, 1)
+st.write("Chosen ", Cluster_no, 'Cluster Number...')
+st.write("Showing Branches with belong to the cluster")
+
+if option_model == "Agglomerative/Hierarchical Clustering":
+   st.dataframe(df_agglo_fin[df_agglo_fin['cluster'] == 5 - Cluster_no]
+if option_model == "GMM: Gaussian Mixture Model Clustering":
+   st.dataframe(df_gmm_fin[df_gmm_fin['cluster'] == 5 - Cluster_no]
+if option_model == "KNN: K-Nearest Neighbours Clustering":
+   st.dataframe(df_kmeans_fin[df_kmeans_fin['cluster'] == 5 - Cluster_no]
+
+st.divider()
+                
 
 
 
