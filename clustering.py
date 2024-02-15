@@ -29,9 +29,15 @@ option_model = st.selectbox(
 st.write('You selected:', option_model)
 
 st.divider()
-
-branch_cluster_no = int(df[df[Name == option_br]]['cluster']) +1
-st.write("Branch Belongs to Cluster No:", branch_cluster_no)
+if option_model == "Agglomerative/Hierarchical Clustering":
+   branch_cluster_no = int(df_agglo[df_agglo['Name'] == option_br]['cluster']) +1
+   st.write("Branch Belongs to Cluster No:", branch_cluster_no)
+elif option_model == "GMM: Gaussian Mixture Model Clustering":
+   branch_cluster_no = int(df_gmm[df_gmm['Name'] == option_br]['cluster']) +1
+   st.write("Branch Belongs to Cluster No:", branch_cluster_no)
+else:
+   branch_cluster_no = int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) +1
+   st.write("Branch Belongs to Cluster No:", branch_cluster_no)
 
 st.divider()
 
