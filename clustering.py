@@ -39,6 +39,9 @@ else:
    branch_cluster_no = int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) +1
    st.write("Branch Belongs to Cluster No:", branch_cluster_no)
 
+st.write("Performance of the branch is:")
+df_perf = df[df['Dlv Branch Code_'] == option_br]
+st.dataframe(df_perf)
 st.divider()
 
 
