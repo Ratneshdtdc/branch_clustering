@@ -1,6 +1,9 @@
 import streamlit as st
+import pandas as pd
 
 st.title(':blue[Branch Clustering Model]')
+df = pd.read_csv("")
+branch_names = 
 
 option = st.selectbox(
    "Select Branch Name/Code.",
