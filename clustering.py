@@ -52,8 +52,8 @@ if option_model == "Agglomerative/Hierarchical Clustering":
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
       
 elif option_model == "GMM: Gaussian Mixture Model Clustering":
-   branch_cluster_no = 5 - int(df_gmm[df_gmm['Name'] == option_br]['cluster']) 
-   st.write("Branch Belongs to Cluster No:", branch_cluster_no)
+   #branch_cluster_no = 5 - int(df_gmm[df_gmm['Name'] == option_br]['cluster']) 
+   #st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    
    if int(df_gmm[df_gmm['Name'] == option_br]['cluster']) == 4:
       branch_cluster_no = 1
