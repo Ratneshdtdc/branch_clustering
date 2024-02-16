@@ -46,7 +46,7 @@ st.divider()
 
 st.header("Performance Based Clusters:")
 
-option_model = st.selectbox(
+option_model_1 = st.selectbox(
    "Select AI/ML Model.",
    ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
    index=None,
@@ -64,11 +64,11 @@ Cluster_no = st.slider('Choose Cluster Number', 1, 5, 1)
 st.write("Chosen ", Cluster_no, 'Cluster Number...')
 st.write("Showing Branches with belong to the cluster")
 
-if option_model == "Agglomerative/Hierarchical Clustering":
+if option_model_1  == "Agglomerative/Hierarchical Clustering":
    st.dataframe(df_agglo_fin[df_agglo_fin['cluster'] == 5 - Cluster_no])
-if option_model == "GMM: Gaussian Mixture Model Clustering":
+if option_model_1  == "GMM: Gaussian Mixture Model Clustering":
    st.dataframe(df_gmm_fin[df_gmm_fin['cluster'] == 5 - Cluster_no])
-if option_model == "KNN: K-Nearest Neighbours Clustering":
+if option_model_1  == "KNN: K-Nearest Neighbours Clustering":
    st.dataframe(df_kmeans_fin[df_kmeans_fin['cluster'] == 5 - Cluster_no])
 #else:
 # pass
