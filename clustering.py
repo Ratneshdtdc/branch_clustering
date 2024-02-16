@@ -2,6 +2,21 @@ import streamlit as st
 import pandas as pd
 
 st.title(':blue[Branch Clustering Model]')
+############################################################
+st.divider()
+
+option_model = st.selectbox(
+   "Select AI/ML Model...",
+   ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
+   index=None,
+   placeholder="Select ML Model...",
+)
+st.write('You selected:', option_model)
+############################################################
+
+st.header("Branch Details:")
+st.divider()
+
 df = pd.read_excel("Performance Table.xlsx")
 df_agglo =  pd.read_csv("yhat_agglo.csv")
 df_kmeans = pd.read_csv("yhat_kmeans.csv")
@@ -18,17 +33,7 @@ option_br = st.selectbox(
 )
 
 st.write('You selected:', option_br)
-st.divider()
-option_model = st.selectbox(
-   "Select AI/ML Model.",
-   ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
-   index=None,
-   placeholder="Select ML Model...",
-)
 
-st.write('You selected:', option_model)
-
-st.divider()
 if option_model == "Agglomerative/Hierarchical Clustering":
    branch_cluster_no = 5 -  int(df_agglo[df_agglo['Name'] == option_br]['cluster'])
    st.write("Branch Belongs to Cluster No:", branch_cluster_no)
@@ -46,12 +51,12 @@ st.divider()
 
 st.header("Performance Based Clusters:")
 
-option_model_1 = st.selectbox(
-   "Select AI/ML Model.",
-   ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
-   index=None,
-   placeholder="Select ML Model...",
-)
+#option_model_1 = st.selectbox(
+#   "Select AI/ML Model.",
+#   ("Agglomerative/Hierarchical Clustering", "GMM: Gaussian Mixture Model Clustering", "KNN: K-Nearest Neighbours Clustering"),
+#   index=None,
+#   placeholder="Select ML Model...",
+#)
 
 df_agglo_fin = df.copy()
 df_agglo_fin['cluster']  = df_agglo['cluster']
@@ -64,11 +69,11 @@ Cluster_no = st.slider('Choose Cluster Number', 1, 5, 1)
 st.write("Chosen ", Cluster_no, 'Cluster Number...')
 st.write("Showing Branches with belong to the cluster")
 
-if option_model_1  == "Agglomerative/Hierarchical Clustering":
+if option_model  == "Agglomerative/Hierarchical Clustering":
    st.dataframe(df_agglo_fin[df_agglo_fin['cluster'] == 5 - Cluster_no])
-if option_model_1  == "GMM: Gaussian Mixture Model Clustering":
+if option_model  == "GMM: Gaussian Mixture Model Clustering":
    st.dataframe(df_gmm_fin[df_gmm_fin['cluster'] == 5 - Cluster_no])
-if option_model_1  == "KNN: K-Nearest Neighbours Clustering":
+if option_model  == "KNN: K-Nearest Neighbours Clustering":
    st.dataframe(df_kmeans_fin[df_kmeans_fin['cluster'] == 5 - Cluster_no])
 #else:
 # pass
