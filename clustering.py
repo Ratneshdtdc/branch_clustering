@@ -66,11 +66,13 @@ st.write("Showing Branches with belong to the cluster")
 
 if option_model == "Agglomerative/Hierarchical Clustering":
    st.dataframe(df_agglo_fin[df_agglo_fin['cluster'] == 5 - Cluster_no]
-if option_model == "GMM: Gaussian Mixture Model Clustering":
+elif option_model == "GMM: Gaussian Mixture Model Clustering":
    st.dataframe(df_gmm_fin[df_gmm_fin['cluster'] == 5 - Cluster_no]
-if option_model == "KNN: K-Nearest Neighbours Clustering":
+elif option_model == "KNN: K-Nearest Neighbours Clustering":
    st.dataframe(df_kmeans_fin[df_kmeans_fin['cluster'] == 5 - Cluster_no]
-
+else:
+   pass
+   
 st.divider()
                 
 
