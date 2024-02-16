@@ -36,19 +36,19 @@ st.write('You selected:', option_br)
 
 if option_model == "Agglomerative/Hierarchical Clustering":
    if int(df_agglo[df_agglo['Name'] == option_br]['cluster']) == 0:
-      branch_cluster_no == 5
+      branch_cluster_no = 5
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    elif int(df_agglo[df_agglo['Name'] == option_br]['cluster']) == 3:
-      branch_cluster_no == 1
+      branch_cluster_no = 1
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    elif int(df_agglo[df_agglo['Name'] == option_br]['cluster']) == 2:
-      branch_cluster_no == 2
+      branch_cluster_no = 2
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
    elif int(df_agglo[df_agglo['Name'] == option_br]['cluster']) == 1:
-      branch_cluster_no == 3
+      branch_cluster_no = 3
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
    elif int(df_agglo[df_agglo['Name'] == option_br]['cluster']) == 4:
-      branch_cluster_no == 4
+      branch_cluster_no = 4
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
       
 elif option_model == "GMM: Gaussian Mixture Model Clustering":
@@ -56,38 +56,38 @@ elif option_model == "GMM: Gaussian Mixture Model Clustering":
    st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    
    if int(df_gmm[df_gmm['Name'] == option_br]['cluster']) == 4:
-      branch_cluster_no == 1
+      branch_cluster_no = 1
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    elif int(df_gmm[df_gmm['Name'] == option_br]['cluster']) == 2:
-      branch_cluster_no == 2
+      branch_cluster_no = 2
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    elif int(df_gmm[df_gmm['Name'] == option_br]['cluster']) == 3:
-      branch_cluster_no == 3
+      branch_cluster_no = 3
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
    elif int(df_gmm[df_gmm['Name'] == option_br]['cluster']) == 0:
-      branch_cluster_no == 4
+      branch_cluster_no = 4
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
    elif int(df_gmm[df_gmm['Name'] == option_br]['cluster']) ==1:
-      branch_cluster_no == 5
+      branch_cluster_no = 5
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
 else:
    #branch_cluster_no = 5 -  int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) 
    #st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    
    if int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) == 2:
-      branch_cluster_no == 1
+      branch_cluster_no = 1
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    elif int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) == 1:
-      branch_cluster_no == 2
+      branch_cluster_no = 2
       st.write("Branch Belongs to Cluster No:", branch_cluster_no)
    elif int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) == 0:
-      branch_cluster_no == 3
+      branch_cluster_no = 3
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
    elif int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) == 4:
-      branch_cluster_no == 4
+      branch_cluster_no = 4
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
    elif int(df_kmeans[df_kmeans['Name'] == option_br]['cluster']) ==3:
-      branch_cluster_no == 5
+      branch_cluster_no = 5
       st.write("Branch Belongs to Cluster No:", branch_cluster_no) 
 
 
